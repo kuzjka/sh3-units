@@ -1,0 +1,8 @@
+sh3:
+  dataDir: ./data
+
+spring:
+  datasource:
+    url: jdbc:h2:${sh3.dataDir}/db
+    username: sa
+    password:
