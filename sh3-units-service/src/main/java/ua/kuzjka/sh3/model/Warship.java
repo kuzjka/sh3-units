@@ -2,6 +2,7 @@ package ua.kuzjka.sh3.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +23,7 @@ public class Warship extends Ship {
     private boolean depthCharges;
 
     @OneToMany(mappedBy = "warship", fetch = FetchType.LAZY)
-    private List<WarshipPresence> presences;
+    private List<WarshipPresence> presences = new ArrayList<>();
 
     /**
      * Gets warship category.

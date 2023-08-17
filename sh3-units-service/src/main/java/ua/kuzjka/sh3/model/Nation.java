@@ -2,6 +2,7 @@ package ua.kuzjka.sh3.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,16 +15,16 @@ public class Nation {
     private String name;
 
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
-    private List<MerchantPresence> merchants;
+    private List<MerchantPresence> merchants = new ArrayList<>();
 
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
-    private List<WarshipPresence> warships;
+    private List<WarshipPresence> warships = new ArrayList<>();
 
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
-    private List<UBoatPresence> uboats;
+    private List<UBoatPresence> uboats = new ArrayList<>();
 
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
-    private List<AircraftPresence> aircrafts;
+    private List<AircraftPresence> aircrafts = new ArrayList<>();
 
     public Integer getId() {
         return id;

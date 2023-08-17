@@ -2,6 +2,7 @@ package ua.kuzjka.sh3.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -35,7 +36,7 @@ public class UBoat {
     private int sternTubes;
 
     @OneToMany(mappedBy = "uboat", fetch = FetchType.LAZY)
-    private List<UBoatPresence> presences;
+    private List<UBoatPresence> presences = new ArrayList<>();
 
     public Integer getId() {
         return id;

@@ -26,6 +26,26 @@ public class UnitsService {
 
     private ImageService imageService;
 
+    public UnitsService(MerchantRepository merchantRepository,
+                        WarshipRepository warshipRepository,
+                        UBoatRepository uBoatRepository,
+                        AircraftRepository aircraftRepository,
+                        MerchantPresenceRepository merchantPresenceRepository,
+                        WarshipPresenceRepository warshipPresenceRepository,
+                        UBoatPresenceRepository uBoatPresenceRepository,
+                        AircraftPresenceRepository aircraftPresenceRepository,
+                        ImageService imageService) {
+        this.merchantRepository = merchantRepository;
+        this.warshipRepository = warshipRepository;
+        this.uBoatRepository = uBoatRepository;
+        this.aircraftRepository = aircraftRepository;
+        this.merchantPresenceRepository = merchantPresenceRepository;
+        this.warshipPresenceRepository = warshipPresenceRepository;
+        this.uBoatPresenceRepository = uBoatPresenceRepository;
+        this.aircraftPresenceRepository = aircraftPresenceRepository;
+        this.imageService = imageService;
+    }
+
     public List<UnitEntry<MerchantDto>> getMerchants(UnitFilter filter) {
         List<Merchant> merchants = filterUnits(filter, merchantRepository, merchantPresenceRepository);
 

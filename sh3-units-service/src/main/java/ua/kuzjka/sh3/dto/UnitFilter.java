@@ -6,6 +6,15 @@ public class UnitFilter {
     private Integer year;
     private List<String> nations;
 
+    public UnitFilter() {
+    }
+
+    public UnitFilter(Integer year, List<String> nations) {
+        this.year = year;
+        if (nations != null && nations.isEmpty()) nations = null;
+        this.nations = nations;
+    }
+
     public Integer getYear() {
         return year;
     }

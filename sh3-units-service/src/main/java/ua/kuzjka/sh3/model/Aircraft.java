@@ -2,6 +2,7 @@ package ua.kuzjka.sh3.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,7 +34,7 @@ public class Aircraft {
     private boolean sirene;
 
     @OneToMany(mappedBy = "aircraft", fetch = FetchType.LAZY)
-    private List<AircraftPresence> presences;
+    private List<AircraftPresence> presences = new ArrayList<>();
 
     public Integer getId() {
         return id;

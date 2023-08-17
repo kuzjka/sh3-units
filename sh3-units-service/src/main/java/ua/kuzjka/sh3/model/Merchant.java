@@ -3,6 +3,7 @@ package ua.kuzjka.sh3.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ public class Merchant extends Ship {
     private MerchantCategory category;
 
     @OneToMany(mappedBy = "merchant", fetch = FetchType.LAZY)
-    private List<MerchantPresence> presences;
+    private List<MerchantPresence> presences = new ArrayList<>();
 
     /**
      * Gets merchant category.
