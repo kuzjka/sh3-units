@@ -1,4 +1,4 @@
-create sequence hibernate_sequence start with 100 increment by 50;
+create sequence unit_sequence start with 100 increment by 50;
 
 create table ships (
     id int primary key,
@@ -13,10 +13,12 @@ create table ships (
 );
 
 create table merchants (
+    id int primary key,
     category varchar
 );
 
 create table warships (
+    id int primary key,
     category varchar,
     deck_gun boolean,
     aa_gun boolean,
@@ -53,16 +55,20 @@ create table aircraft (
     sirene boolean
 );
 
+create sequence nations_sequence start with 100 increment by 50;
+
 create table nations (
     id int primary key,
     name varchar unique
 );
+
+create sequence precences_sequence start with 100 increment by 50;
 
 create table presences (
     id int primary key,
     type char(1),
     unit_id int,
     nation_id int,
-    start int,
-    end int
+    start_year int,
+    end_year int
 );

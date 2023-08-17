@@ -8,7 +8,8 @@ import jakarta.persistence.*;
 @Table(name = "ships")
 public class Ship {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "unit_sequence")
+    @SequenceGenerator(name = "unit_sequence", sequenceName = "unit_sequence")
     private Integer id;
 
     private String name;

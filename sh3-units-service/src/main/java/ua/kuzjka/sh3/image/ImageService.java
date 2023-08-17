@@ -25,15 +25,19 @@ public class ImageService {
         this.unitThumbnailsDir = new File(imagesDir, "unitThumbs");
         this.nationFlagsDir = new File(imagesDir, "nationFlags");
 
-        if (!this.imagesDir.mkdirs()) throw new IOException("Cannot create images dir");
-        if (!this.unitImagesDir.mkdir()) throw new IOException("Cannot create unit images dir");
-        if (!this.unitThumbnailsDir.mkdir()) throw new IOException("Cannot create unit thumbnail dir");
-        if (!this.nationFlagsDir.mkdir()) throw new IOException("Cannot create nation flags dir");
+        if (!this.imagesDir.isDirectory() && !this.imagesDir.mkdirs())
+            throw new IOException("Cannot create images dir");
+        if (!this.unitImagesDir.isDirectory() && !this.unitImagesDir.mkdir())
+            throw new IOException("Cannot create unit images dir");
+        if (!this.unitThumbnailsDir.isDirectory() && !this.unitThumbnailsDir.mkdir())
+            throw new IOException("Cannot create unit thumbnail dir");
+        if (!this.nationFlagsDir.isDirectory() && !this.nationFlagsDir.mkdir())
+            throw new IOException("Cannot create nation flags dir");
     }
 
     public void saveUnitImage(int id, byte[] image) throws IOException {
         try (ByteArrayInputStream bais = new ByteArrayInputStream(image)) {
-            try (FileOutputStream imageOutput = new FileOutputStream(new File(imagesDir, getFilename(id)))) {
+            try (FileOutputStream imageOutput = new FileOutputStream(new File(unitImagesDir, getFilename(id)))) {
                 bais.transferTo(imageOutput);
             }
             bais.reset();

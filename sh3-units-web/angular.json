@@ -64,7 +64,8 @@
               "browserTarget": "sh3-units-web:build:production"
             },
             "development": {
-              "browserTarget": "sh3-units-web:build:development"
+              "browserTarget": "sh3-units-web:build:development",
+              "proxyConfig": "proxy.conf.mjs"
             }
           },
           "defaultConfiguration": "development"

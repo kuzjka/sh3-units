@@ -5,6 +5,7 @@ import { Merchant, UnitEntry } from "../../shared/data.model";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MerchantAddComponent } from "../merchant-add/merchant-add.component";
+import { ImageViewComponent } from "../../shared/image-view/image-view.component";
 
 @Component({
   selector: 'app-merchant-list',
@@ -31,10 +32,14 @@ export class MerchantListComponent {
   }
 
   openAddDialog() {
-    const dialogRef = this.dialog.open(MerchantAddComponent);
+    const dialogRef = this.dialog.open(MerchantAddComponent, { minWidth: 480 });
 
     dialogRef.afterClosed().subscribe(added => {
       if (added) this.loadMerchants();
     });
+  }
+
+  openImage(imageSrc: string) {
+    this.dialog.open(ImageViewComponent, { data: imageSrc });
   }
 }

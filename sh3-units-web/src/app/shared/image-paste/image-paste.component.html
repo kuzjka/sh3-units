@@ -2,4 +2,6 @@
   <img *ngIf="previewSrc" [src]="previewSrc">
 </div>
 
-<textarea (paste)="paste($event)" placeholder="Paste the image here"></textarea>
+<mat-form-field>
+  <textarea matInput (paste)="paste($event)" placeholder="Paste the image here"></textarea>
+</mat-form-field>

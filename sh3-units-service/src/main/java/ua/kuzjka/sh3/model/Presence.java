@@ -15,7 +15,10 @@ public abstract class Presence<T> {
     @JoinColumn(name = "nation_id")
     private Nation nation;
 
+    @Column(name = "start_year")
     private int start;
+
+    @Column(name = "end_year")
     private int end;
 
     public Integer getId() {

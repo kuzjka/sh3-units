@@ -51,7 +51,7 @@ public class NationsService {
     }
 
     public List<NationEntry> getNations() {
-        return this.nationRepository.findAllOrderByName().stream()
+        return this.nationRepository.findAllByOrderByNameAsc().stream()
                 .map(n -> new NationEntry(n.getName(), "/api/flags/" + imageService.getFilename(n.getId())))
                 .toList();
     }

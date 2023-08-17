@@ -1,9 +1,27 @@
 package ua.kuzjka.sh3.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import ua.kuzjka.sh3.model.Merchant;
 import ua.kuzjka.sh3.model.MerchantPresence;
 
+import java.util.List;
+
 @Repository
-public interface MerchantPresenceRepository extends PresenceRepository<Merchant, MerchantPresence> {
+@Transactional(readOnly = true)
+public interface MerchantPresenceRepository extends JpaRepository<MerchantPresence, Integer>, PresenceRepository<Merchant> {
+    @Override
+    @Query("select p.merchant from MerchantPresence p where p.start <= :year and p.end >= :year")
+    List<Merchant> findByYear(@Param("year") int year);
+
+    @Override
+    @Query("select p.merchant from MerchantPresence p where p.nation in :nations")
+    List<Merchant> findByNations(@Param("nations") List<String> nations);
+
+    @Override
+    @Query("select p.merchant from MerchantPresence p where p.start <= :year and p.end >= :year and p.nation in :nations")
+    List<Merchant> findByYearAndNations(@Param("year") int year, @Param("nations") List<String> nations);
 }

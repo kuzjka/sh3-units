@@ -19,25 +19,37 @@ public class UnitsController {
     }
 
     @GetMapping("/merchants")
-    public List<UnitEntry<MerchantDto>> getMerchants(@RequestParam Integer year, @RequestParam List<String> nations) {
+    public List<UnitEntry<MerchantDto>> getMerchants(
+            @RequestParam(required = false) Integer year,
+            @RequestParam(required = false) List<String> nations
+    ) {
         UnitFilter filter = new UnitFilter(year, nations);
         return unitsService.getMerchants(filter);
     }
 
     @GetMapping("/warships")
-    public List<UnitEntry<WarshipDto>> getWarships(@RequestParam Integer year, @RequestParam List<String> nations) {
+    public List<UnitEntry<WarshipDto>> getWarships(
+            @RequestParam(required = false) Integer year,
+            @RequestParam(required = false) List<String> nations
+    ) {
         UnitFilter filter = new UnitFilter(year, nations);
         return unitsService.getWarships(filter);
     }
 
     @GetMapping("/uboats")
-    public List<UnitEntry<UBoatDto>> getUBoats(@RequestParam Integer year, @RequestParam List<String> nations) {
+    public List<UnitEntry<UBoatDto>> getUBoats(
+            @RequestParam(required = false) Integer year,
+            @RequestParam(required = false) List<String> nations
+    ) {
         UnitFilter filter = new UnitFilter(year, nations);
         return unitsService.getUBoats(filter);
     }
 
     @GetMapping("/aircraft")
-    public List<UnitEntry<AircraftDto>> getAircraft(@RequestParam Integer year, @RequestParam List<String> nations) {
+    public List<UnitEntry<AircraftDto>> getAircraft(
+            @RequestParam(required = false) Integer year,
+            @RequestParam(required = false) List<String> nations
+    ) {
         UnitFilter filter = new UnitFilter(year, nations);
         return unitsService.getAircraft(filter);
     }

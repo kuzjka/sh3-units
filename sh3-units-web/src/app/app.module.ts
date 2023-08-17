@@ -20,6 +20,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { ImagePasteComponent } from './shared/image-paste/image-paste.component';
 import { editableGuard } from "./editable.guard";
 import { HttpClientModule } from "@angular/common/http";
+import { ImageViewComponent } from './shared/image-view/image-view.component';
+import { MatIconModule } from "@angular/material/icon";
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -42,7 +44,8 @@ const routes: Routes = [
     UboatListComponent,
     AircraftListComponent,
     MerchantAddComponent,
-    ImagePasteComponent
+    ImagePasteComponent,
+    ImageViewComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ const routes: Routes = [
     MatSelectModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

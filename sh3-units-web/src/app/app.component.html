@@ -1,9 +1,11 @@
-<nav mat-tab-nav-bar backgroundColor="primary" [tabPanel]="tabPanel">
-  <a mat-tab-link *ngFor="let link of links"
-     [routerLink]="'/' + link"
-     (click)="activeLink = link"
-     [active]="activeLink == link">{{ link | uppercase }}</a>
-</nav>
-<mat-tab-nav-panel #tabPanel>
-  <router-outlet></router-outlet>
-</mat-tab-nav-panel>
+  <nav mat-tab-nav-bar backgroundColor="primary" [tabPanel]="tabPanel">
+    <a mat-tab-link *ngFor="let link of links"
+       [routerLink]="'/' + link"
+       (click)="activeLink = link"
+       [active]="activeLink == link">{{ link | uppercase }}</a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel>
+    <div class="container">
+    <router-outlet></router-outlet>
+    </div>
+  </mat-tab-nav-panel>

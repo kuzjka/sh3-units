@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto;
+}
+
+.preview {
+  width: 64px;
+  height: 64px;
+  padding: 0 24px;
+}
+
+textarea {
+  height: 64px;
+}

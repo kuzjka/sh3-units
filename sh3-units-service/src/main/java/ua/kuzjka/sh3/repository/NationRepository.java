@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface NationRepository extends JpaRepository<Nation, Integer> {
-    List<Nation> findAllOrderByName();
+    List<Nation> findAllByOrderByNameAsc();
 }

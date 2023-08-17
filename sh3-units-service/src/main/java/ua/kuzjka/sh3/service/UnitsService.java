@@ -169,7 +169,7 @@ public class UnitsService {
     private <T> List<T> filterUnits(
             UnitFilter filter,
             JpaRepository<T, Integer> unitRepository,
-            PresenceRepository<T, ? extends Presence<T>> presenceRepository
+            PresenceRepository<T> presenceRepository
     ) {
         if (filter.getNations() == null && filter.getYear() == null) {
             return unitRepository.findAll();
