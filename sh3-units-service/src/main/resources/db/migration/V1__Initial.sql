@@ -49,13 +49,13 @@ create table aircraft (
     rockets boolean,
     torpedoes boolean,
     pak_gun boolean,
-    liegh_light boolean,
+    leigh_light boolean,
     sirene boolean
 );
 
 create table nations (
     id int primary key,
-    name varchar
+    name varchar unique
 );
 
 create table presences (

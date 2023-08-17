@@ -11,6 +11,8 @@ public class Nation {
     @GeneratedValue
     private Integer id;
 
+    private String name;
+
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
     private List<MerchantPresence> merchants;
 
@@ -22,8 +24,6 @@ public class Nation {
 
     @OneToMany(mappedBy = "nation", fetch = FetchType.LAZY)
     private List<AircraftPresence> aircrafts;
-
-    private String name;
 
     public Integer getId() {
         return id;

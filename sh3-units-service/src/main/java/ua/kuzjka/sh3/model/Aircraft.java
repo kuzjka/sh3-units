@@ -27,8 +27,8 @@ public class Aircraft {
     @Column(name = "pak_gun")
     private boolean pakGun;
 
-    @Column(name = "liegh_light")
-    private boolean lieghLight;
+    @Column(name = "leigh_light")
+    private boolean leighLight;
 
     private boolean sirene;
 
@@ -169,12 +169,12 @@ public class Aircraft {
     /**
      * Checks if the aircraft is equipped with a Leigh light.
      */
-    public boolean hasLieghLight() {
-        return lieghLight;
+    public boolean hasLeighLight() {
+        return leighLight;
     }
 
-    public void setLieghLight(boolean lieghLight) {
-        this.lieghLight = lieghLight;
+    public void setLeighLight(boolean leighLight) {
+        this.leighLight = leighLight;
     }
 
     /**
