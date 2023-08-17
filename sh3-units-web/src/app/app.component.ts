@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sh3-units-web';
+
+  links = ['merchants', 'warships', 'uboats', 'aircraft'];
+  activeLink = this.links[0];
+
+  constructor() {
+  }
 }

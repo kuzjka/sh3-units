@@ -1,0 +1,47 @@
+<h3 mat-dialog-title>Add merchant</h3>
+
+<app-image-paste (imageLoaded)="imageLoaded($event)"></app-image-paste>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (submit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Displacement, t</mat-label>
+      <input matInput type="number" formControlName="displacement">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Length, m</mat-label>
+      <input matInput type="number" formControlName="length">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Beam, m</mat-label>
+      <input matInput type="number" formControlName="beam">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Draft, m</mat-label>
+      <input matInput type="number" formControlName="draft">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mast, m</mat-label>
+      <input matInput type="number" formControlName="mast">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Speed, kn</mat-label>
+      <input matInput type="number" formControlName="speed">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let cat of CATEGORIES" [value]="cat">{{ cat }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button type="button" mat-button (click)="cancel()">Cancel</button>
+  <button type="button" mat-button color="primary" (click)="submit()" [disabled]="!form.valid || !image">Add</button>
+</mat-dialog-actions>

@@ -1,0 +1,5 @@
+<div class="preview">
+  <img *ngIf="previewSrc" [src]="previewSrc">
+</div>
+
+<textarea (paste)="paste($event)" placeholder="Paste the image here"></textarea>

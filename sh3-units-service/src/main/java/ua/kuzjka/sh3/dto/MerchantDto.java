@@ -49,11 +49,11 @@ public class MerchantDto {
         this.name = name;
     }
 
-    public float getDisplacement() {
+    public int getDisplacement() {
         return displacement;
     }
 
-    public void setDisplacement(float displacement) {
+    public void setDisplacement(int displacement) {
         this.displacement = displacement;
     }
 
