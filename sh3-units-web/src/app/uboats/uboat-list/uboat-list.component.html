@@ -1,1 +1,7 @@
-<p>uboat-list works!</p>
+<div class="action-buttons" *ngIf="editable | async">
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add U-boat</button>
+</div>
+
+<div class="unit-list">
+  <app-uboat-card *ngFor="let uboat of uboats" [uboat]="uboat" (click)="openItemDetails(uboat)"></app-uboat-card>
+</div>

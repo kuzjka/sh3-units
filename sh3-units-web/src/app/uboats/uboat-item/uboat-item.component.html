@@ -1,0 +1,19 @@
+<button mat-mini-fab color="primary" class="close-btn" (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+
+<h2 mat-dialog-title>{{ uboat.unit.name }}</h2>
+<mat-dialog-content>
+  <img [src]="uboat.imageUrl" [alt]="uboat.unit.name">
+  <div class="description">
+    <div class="specifications">
+      <p>Displacement surfaced: {{ uboat.unit.displacementSurfaced }} t</p>
+      <p>Displacement submerged: {{ uboat.unit.displacementSubmerged }} t</p>
+      <p>Speed surfaced: {{ uboat.unit.speedSurfaced }} kn</p>
+      <p>Speed submerged: {{ uboat.unit.speedSubmerged }} kn</p>
+      <p>Diving depth: {{ uboat.unit.divingDepth }}</p>
+      <p>Bow tubes: {{ uboat.unit.bowTubes }}</p>
+      <p>Stern tubes: {{ uboat.unit.sternTubes }}</p>
+    </div>
+  </div>
+</mat-dialog-content>

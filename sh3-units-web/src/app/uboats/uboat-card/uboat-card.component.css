@@ -1,0 +1,5 @@
+mat-card > img {
+  height: 120px;
+  padding: 8px 0;
+  object-fit: cover;
+}

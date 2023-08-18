@@ -1,0 +1,45 @@
+<h3 mat-dialog-title>Add U-boat</h3>
+
+<app-image-paste (imageLoaded)="imageLoaded($event)"></app-image-paste>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (submit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Displacement surfaced, t</mat-label>
+      <input matInput type="number" formControlName="displacementSurfaced">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Displacement submerged, t</mat-label>
+      <input matInput type="number" formControlName="displacementSubmerged">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Speed surfaced, kn</mat-label>
+      <input matInput type="number" formControlName="speedSurfaced">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Speed submerged, kn</mat-label>
+      <input matInput type="number" formControlName="speedSubmerged">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Diving depth, m</mat-label>
+      <input matInput type="number" formControlName="divingDepth">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bow tubes</mat-label>
+      <input matInput type="number" formControlName="bowTubes">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Stern tubes</mat-label>
+      <input matInput type="number" formControlName="sternTubes">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button type="button" mat-button (click)="cancel()">Cancel</button>
+  <button type="button" mat-button color="primary" (click)="submit()" [disabled]="!form.valid || !image">Add</button>
+</mat-dialog-actions>

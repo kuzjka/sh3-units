@@ -11,7 +11,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   styleUrls: ['./warship-add.component.css']
 })
 export class WarshipAddComponent {
-  CATEGORIS = Object.values(WarshipCategory);
+  CATEGORIES = Object.values(WarshipCategory);
 
   form = this.fb.nonNullable.group({
     name: ['', Validators.required],
