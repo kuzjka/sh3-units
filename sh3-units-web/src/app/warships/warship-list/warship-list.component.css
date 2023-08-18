@@ -1,0 +1,13 @@
+.action-buttons {
+  margin: 16px;
+}
+
+.unit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+app-warship-card {
+  width: 200px
+}

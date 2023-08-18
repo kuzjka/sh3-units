@@ -1,1 +1,7 @@
-<p>warship-list works!</p>
+<div class="action-buttons" *ngIf="editable | async">
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add warship</button>
+</div>
+
+<div class="unit-list">
+  <app-warship-card *ngFor="let warship of warships" [warship]="warship" (click)="openItemDetails(warship)"></app-warship-card>
+</div>

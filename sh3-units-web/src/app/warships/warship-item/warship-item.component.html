@@ -1,0 +1,37 @@
+<button mat-mini-fab color="primary" class="close-btn" (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+
+<h2 mat-dialog-title>{{ warship.unit.name }}</h2>
+<div mat-dialog-content class="container">
+  <img [src]="warship.imageUrl" [alt]="warship.unit.name">
+  <div class="description">
+    <h3>{{ warship.unit.category }}</h3>
+    <div class="specifications">
+      <p>Displacement: {{ warship.unit.displacement }} t</p>
+      <p>Length: {{ warship.unit.length }} m</p>
+      <p>Beam: {{ warship.unit.beam }} m</p>
+      <p>Draft: {{ warship.unit.draft }} m</p>
+      <p>Mast: {{ warship.unit.mast }} m</p>
+      <p>Speed: {{ warship.unit.speed }} kn</p>
+    </div>
+    <div class="features">
+      <p *ngIf="warship.unit.deckGun" class="unit-feature">
+        <img src="assets/icons/deck_gun.png" class="unit-icon">
+        Deck gun
+      </p>
+      <p *ngIf="warship.unit.aaGun" class="unit-feature">
+        <img src="assets/icons/aagun.png" class="unit-icon">
+        AA gun
+      </p>
+      <p *ngIf="warship.unit.torpedoes" class="unit-feature">
+        <img src="assets/icons/torpedo.png" class="unit-icon">
+        Torpedoes
+      </p>
+      <p *ngIf="warship.unit.depthCharges" class="unit-feature">
+        <img src="assets/icons/depth_charge.png" class="unit-icon">
+        Depth charges
+      </p>
+    </div>
+  </div>
+</div>

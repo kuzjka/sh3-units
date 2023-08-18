@@ -5,7 +5,6 @@ import { Merchant, UnitEntry } from "../../shared/data.model";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MerchantAddComponent } from "../merchant-add/merchant-add.component";
-import { ImageViewComponent } from "../../shared/image-view/image-view.component";
 
 @Component({
   selector: 'app-merchant-list',

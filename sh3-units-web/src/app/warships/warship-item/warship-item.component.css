@@ -1,0 +1,20 @@
+.close-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: white;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.unit-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+

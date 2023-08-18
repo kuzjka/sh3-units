@@ -23,6 +23,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { ImageViewComponent } from './shared/image-view/image-view.component';
 import { MatIconModule } from "@angular/material/icon";
 import { MerchantItemComponent } from './merchants/merchant-item/merchant-item.component';
+import { WarshipAddComponent } from './warships/warship-add/warship-add.component';
+import { WarshipItemComponent } from './warships/warship-item/warship-item.component';
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { WarshipCardComponent } from './warships/waship-card/warship-card.component';
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -47,7 +51,10 @@ const routes: Routes = [
     MerchantAddComponent,
     ImagePasteComponent,
     ImageViewComponent,
-    MerchantItemComponent
+    MerchantItemComponent,
+    WarshipAddComponent,
+    WarshipItemComponent,
+    WarshipCardComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +66,7 @@ const routes: Routes = [
     /* Angular Material */
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatDialogModule,
     MatInputModule,
     MatSelectModule,

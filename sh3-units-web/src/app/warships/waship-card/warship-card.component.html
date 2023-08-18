@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ warship.unit.name }}</mat-card-title>
+    <mat-card-subtitle>{{ warship.unit.category | titlecase }}</mat-card-subtitle>
+  </mat-card-header>
+  <img [src]="warship.thumbUrl" [alt]="warship.unit.name">
+  <mat-card-content>
+    <p>Displacement: {{ warship.unit.displacement }} t</p>
+  </mat-card-content>
+</mat-card>
