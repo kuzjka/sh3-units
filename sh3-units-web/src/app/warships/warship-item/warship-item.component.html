@@ -3,7 +3,7 @@
 </button>
 
 <h2 mat-dialog-title>{{ warship.unit.name }}</h2>
-<div mat-dialog-content class="container">
+<mat-dialog-content class="container">
   <img [src]="warship.imageUrl" [alt]="warship.unit.name">
   <div class="description">
     <h3>{{ warship.unit.category }}</h3>
@@ -34,4 +34,4 @@
       </p>
     </div>
   </div>
-</div>
+</mat-dialog-content>

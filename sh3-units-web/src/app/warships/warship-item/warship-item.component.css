@@ -6,7 +6,7 @@
   z-index: 2;
 }
 
-.container {
+mat-dialog-content{
   display: flex;
   align-items: center;
   gap: 16px;

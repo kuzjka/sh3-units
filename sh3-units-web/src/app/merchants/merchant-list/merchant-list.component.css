@@ -2,6 +2,12 @@
   margin: 16px;
 }
 
-app-merchant-item {
-  margin: 8px;
+.unit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+app-merchant-card {
+  width: 200px
 }

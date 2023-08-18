@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Merchant, UnitEntry } from "../../shared/data.model";
-import { ImageViewComponent } from "../../shared/image-view/image-view.component";
-import { MatDialog } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-merchant-item',
@@ -9,12 +8,14 @@ import { MatDialog } from "@angular/material/dialog";
   styleUrls: ['./merchant-item.component.css']
 })
 export class MerchantItemComponent {
-  @Input({ required: true })
   merchant!: UnitEntry<Merchant>;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(@Inject(MAT_DIALOG_DATA) merchant: UnitEntry<Merchant>,
+              private dialogRef: MatDialogRef<MerchantItemComponent>) {
+    this.merchant = merchant;
+  }
 
-  openImage(imageSrc: string) {
-    this.dialog.open(ImageViewComponent, { data: imageSrc });
+  close() {
+    this.dialogRef.close();
   }
 }

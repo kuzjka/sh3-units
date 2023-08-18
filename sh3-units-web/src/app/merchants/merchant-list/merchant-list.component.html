@@ -3,5 +3,5 @@
 </div>
 
 <div class="unit-list">
-  <app-merchant-item *ngFor="let merchant of merchants" [merchant]="merchant"></app-merchant-item>
+  <app-merchant-card *ngFor="let merchant of merchants" [merchant]="merchant" (click)="openItemDetails(merchant)"></app-merchant-card>
 </div>

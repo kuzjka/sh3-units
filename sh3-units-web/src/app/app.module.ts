@@ -26,7 +26,8 @@ import { MerchantItemComponent } from './merchants/merchant-item/merchant-item.c
 import { WarshipAddComponent } from './warships/warship-add/warship-add.component';
 import { WarshipItemComponent } from './warships/warship-item/warship-item.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
-import { WarshipCardComponent } from './warships/waship-card/warship-card.component';
+import { WarshipCardComponent } from './warships/warship-card/warship-card.component';
+import { MerchantCardComponent } from './merchants/merchant-card/merchant-card.component';
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -54,7 +55,8 @@ const routes: Routes = [
     MerchantItemComponent,
     WarshipAddComponent,
     WarshipItemComponent,
-    WarshipCardComponent
+    WarshipCardComponent,
+    MerchantCardComponent
   ],
   imports: [
     BrowserModule,

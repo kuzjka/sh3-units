@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ merchant.unit.name }}</mat-card-title>
+    <mat-card-subtitle>{{ merchant.unit.category | titlecase }}</mat-card-subtitle>
+  </mat-card-header>
+  <img [src]="merchant.thumbUrl" [alt]="merchant.unit.name">
+  <mat-card-content>
+    <p>Displacement: {{ merchant.unit.displacement }} t</p>
+  </mat-card-content>
+</mat-card>

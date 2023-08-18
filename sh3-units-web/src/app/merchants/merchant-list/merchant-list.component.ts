@@ -5,6 +5,7 @@ import { Merchant, UnitEntry } from "../../shared/data.model";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MerchantAddComponent } from "../merchant-add/merchant-add.component";
+import { MerchantItemComponent } from "../merchant-item/merchant-item.component";
 
 @Component({
   selector: 'app-merchant-list',
@@ -38,5 +39,7 @@ export class MerchantListComponent {
     });
   }
 
-
+  openItemDetails(merchant: UnitEntry<Merchant>) {
+    this.dialog.open(MerchantItemComponent, { data: merchant });
+  }
 }
