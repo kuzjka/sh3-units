@@ -39,7 +39,5 @@ export class MerchantListComponent {
     });
   }
 
-  openImage(imageSrc: string) {
-    this.dialog.open(ImageViewComponent, { data: imageSrc });
-  }
+
 }

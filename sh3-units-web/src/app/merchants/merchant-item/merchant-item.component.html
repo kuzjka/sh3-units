@@ -1,0 +1,19 @@
+<mat-card class="unit-list-card">
+  <mat-card-content>
+    <img [src]="merchant.thumbUrl" [alt]="merchant.unit.name" class="unit-list-thumb" (click)="openImage(merchant.imageUrl)">
+    <div class="unit-list-card-content">
+      <div>
+        <span class="unit-list-card-title">{{ merchant.unit.name }}</span>
+        <span class="unit-list-card-subtitle">{{ merchant.unit.category | titlecase }}</span>
+      </div>
+      <div class="unit-description">
+        <p>Displacement: {{ merchant.unit.displacement }} t</p>
+        <p>Length: {{ merchant.unit.length }} m</p>
+        <p>Beam: {{ merchant.unit.beam }} m</p>
+        <p>Draft: {{ merchant.unit.draft }} m</p>
+        <p>Mast: {{ merchant.unit.mast }} m</p>
+        <p>Speed: {{ merchant.unit.speed }} kn</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

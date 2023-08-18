@@ -22,6 +22,7 @@ import { editableGuard } from "./editable.guard";
 import { HttpClientModule } from "@angular/common/http";
 import { ImageViewComponent } from './shared/image-view/image-view.component';
 import { MatIconModule } from "@angular/material/icon";
+import { MerchantItemComponent } from './merchants/merchant-item/merchant-item.component';
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -45,7 +46,8 @@ const routes: Routes = [
     AircraftListComponent,
     MerchantAddComponent,
     ImagePasteComponent,
-    ImageViewComponent
+    ImageViewComponent,
+    MerchantItemComponent
   ],
   imports: [
     BrowserModule,
