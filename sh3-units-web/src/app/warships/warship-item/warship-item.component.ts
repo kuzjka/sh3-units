@@ -16,7 +16,6 @@ export class WarshipItemComponent {
   }
 
   close() {
-    console.log("Close dialog");
     this.dialogRef.close();
   }
 }

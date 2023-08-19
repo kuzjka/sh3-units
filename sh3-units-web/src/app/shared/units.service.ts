@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Merchant, UBoat, UnitEntry, Warship } from "./data.model";
+import { Aircraft, Merchant, UBoat, UnitEntry, Warship } from "./data.model";
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +38,14 @@ export class UnitsService {
     return this.http.get<UnitEntry<UBoat>[]>('/api/uboats');
   }
 
+  getAircraft(year?: number, nations?: string[]) {
+    let params = new HttpParams();
+    if (year) params = params.set('year', year);
+    if (nations) params = params.appendAll({ nations: nations });
+
+    return this.http.get<UnitEntry<Aircraft>[]>('/api/aircraft');
+  }
+
   addMerchant(merchant: Merchant, image: ArrayBuffer) {
     let body = {
       unit: merchant,
@@ -65,7 +73,18 @@ export class UnitsService {
     return this.http.post('/api/uboat', body);
   }
 
+  addAircraft(aircraft: Aircraft, image: ArrayBuffer) {
+    let body = {
+      unit: aircraft,
+      image: this.encode(image)
+    };
+
+    return this.http.post('/api/aircraft', body);
+  }
+
   private encode(buffer: ArrayBuffer) {
-    return btoa(String.fromCharCode(... new Uint8Array(buffer)));
+    return btoa(
+      new Uint8Array(buffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+    );
   }
 }

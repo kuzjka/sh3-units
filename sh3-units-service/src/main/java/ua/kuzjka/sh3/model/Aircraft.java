@@ -17,7 +17,7 @@ public class Aircraft {
     private int range;
     private int length;
     private int wingspan;
-    private String ordinance;
+    private String ordnance;
     private boolean bombs;
 
     @Column(name = "depth_charges")
@@ -105,12 +105,12 @@ public class Aircraft {
      * Gets types of ordinance.
      * @return  Plane ordinance variants (newline-separated)
      */
-    public String getOrdinance() {
-        return ordinance;
+    public String getOrdnance() {
+        return ordnance;
     }
 
-    public void setOrdinance(String ordinance) {
-        this.ordinance = ordinance;
+    public void setOrdnance(String ordinance) {
+        this.ordnance = ordinance;
     }
 
     /**

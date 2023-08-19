@@ -1,1 +1,7 @@
-<p>aircraft-list works!</p>
+<div class="action-buttons" *ngIf="editable | async">
+  <button mat-raised-button color="primary" (click)="openAddDialog()">Add aircraft</button>
+</div>
+
+<div class="unit-list">
+  <app-aircraft-card *ngFor="let item of aircraft" [aircraft]="item" (click)="openItemDetails(item)"></app-aircraft-card>
+</div>

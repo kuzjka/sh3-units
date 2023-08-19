@@ -8,7 +8,7 @@ public class AircraftDto {
     private int range;
     private float length;
     private float wingspan;
-    private String ordinance;
+    private String ordnance;
     private boolean bombs;
     private boolean depthCharges;
     private boolean rockets;
@@ -26,7 +26,7 @@ public class AircraftDto {
         this.range = aircraft.getRange();
         this.length = aircraft.getLength() / 10f;
         this.wingspan = aircraft.getWingspan() / 10f;
-        this.ordinance = aircraft.getOrdinance();
+        this.ordnance = aircraft.getOrdnance();
         this.bombs = aircraft.hasBombs();
         this.depthCharges = aircraft.hasDepthCharges();
         this.rockets = aircraft.hasRockets();
@@ -43,7 +43,7 @@ public class AircraftDto {
         aircraft.setRange(range);
         aircraft.setLength(Math.round(length * 10));
         aircraft.setWingspan(Math.round(wingspan * 10));
-        aircraft.setOrdinance(ordinance);
+        aircraft.setOrdnance(ordnance);
         aircraft.setBombs(bombs);
         aircraft.setDepthCharges(depthCharges);
         aircraft.setRockets(rockets);
@@ -94,12 +94,12 @@ public class AircraftDto {
         this.wingspan = wingspan;
     }
 
-    public String getOrdinance() {
-        return ordinance;
+    public String getOrdnance() {
+        return ordnance;
     }
 
-    public void setOrdinance(String ordinance) {
-        this.ordinance = ordinance;
+    public void setOrdnance(String ordnance) {
+        this.ordnance = ordnance;
     }
 
     public boolean isBombs() {

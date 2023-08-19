@@ -45,7 +45,7 @@ create table aircraft (
     range int,
     length int,
     wingspan int,
-    ordinance text,
+    ordnance text,
     bombs boolean,
     depth_charges boolean,
     rockets boolean,

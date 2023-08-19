@@ -41,7 +41,7 @@ export interface Aircraft {
   range: number,
   length: number,
   wingspan: number,
-  ordinance: string,
+  ordnance: string,
   bombs: boolean,
   depthCharges: boolean,
   rockets: boolean,

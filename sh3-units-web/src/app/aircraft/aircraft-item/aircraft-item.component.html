@@ -1,0 +1,49 @@
+<button mat-mini-fab color="primary" class="close-btn" (click)="close()">
+  <mat-icon>close</mat-icon>
+</button>
+
+<h2 mat-dialog-title>{{ aircraft.unit.name }}</h2>
+<mat-dialog-content>
+  <img [src]="aircraft.imageUrl" [alt]="aircraft.unit.name">
+  <div class="description">
+    <div class="specifications">
+      <p>Speed: {{ aircraft.unit.speed }} kn</p>
+      <p>Range: {{ aircraft.unit.range }} km</p>
+      <p>Length: {{ aircraft.unit.length }} m</p>
+      <p>Wingspan: {{ aircraft.unit.wingspan }} m</p>
+    </div>
+    <div class="features">
+      <p *ngIf="aircraft.unit.bombs" class="unit-feature">
+        <img src="assets/icons/bomb.png" class="unit-icon">
+        Bombs
+      </p>
+      <p *ngIf="aircraft.unit.depthCharges" class="unit-feature">
+        <img src="assets/icons/depth_charge.png" class="unit-icon">
+        Depth charges
+      </p>
+      <p *ngIf="aircraft.unit.rockets" class="unit-feature">
+        <img src="assets/icons/rocket.png" class="unit-icon">
+        Rockets
+      </p>
+      <p *ngIf="aircraft.unit.torpedoes" class="unit-feature">
+        <img src="assets/icons/torpedo.png" class="unit-icon">
+        Torpedoes
+      </p>
+      <p *ngIf="aircraft.unit.pakGun" class="unit-feature">
+        <img src="assets/icons/pak_gun.png" class="unit-icon">
+        PAK gun
+      </p>
+      <p *ngIf="aircraft.unit.leighLight" class="unit-feature">
+        <img src="assets/icons/leigh_light.png" class="unit-icon">
+        Leigh light
+      </p>
+      <p *ngIf="aircraft.unit.sirene" class="unit-feature">
+        <img src="assets/icons/siren.png" class="unit-icon">
+        Sirene
+      </p>
+    </div>
+    <div class="ordnance">
+      Ordnance: <pre>{{ aircraft.unit.ordnance }}</pre>
+    </div>
+  </div>
+</mat-dialog-content>

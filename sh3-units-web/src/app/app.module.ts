@@ -31,6 +31,9 @@ import { MerchantCardComponent } from './merchants/merchant-card/merchant-card.c
 import { UboatCardComponent } from './uboats/uboat-card/uboat-card.component';
 import { UboatItemComponent } from './uboats/uboat-item/uboat-item.component';
 import { UboatAddComponent } from './uboats/uboat-add/uboat-add.component';
+import { AircraftAddComponent } from './aircraft/aircraft-add/aircraft-add.component';
+import { AircraftCardComponent } from './aircraft/aircraft-card/aircraft-card.component';
+import { AircraftItemComponent } from './aircraft/aircraft-item/aircraft-item.component';
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -62,7 +65,10 @@ const routes: Routes = [
     MerchantCardComponent,
     UboatCardComponent,
     UboatItemComponent,
-    UboatAddComponent
+    UboatAddComponent,
+    AircraftAddComponent,
+    AircraftCardComponent,
+    AircraftItemComponent
   ],
   imports: [
     BrowserModule,

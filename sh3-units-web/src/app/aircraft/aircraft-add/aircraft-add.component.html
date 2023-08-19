@@ -1,0 +1,44 @@
+<h3 mat-dialog-title>Add aircraft</h3>
+
+<app-image-paste (imageLoaded)="imageLoaded($event)"></app-image-paste>
+
+<mat-dialog-content>
+  <form [formGroup]="form" (submit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Speed, kn</mat-label>
+      <input matInput type="number" formControlName="speed">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Range, km</mat-label>
+      <input matInput type="number" formControlName="range">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Length, m</mat-label>
+      <input matInput type="number" formControlName="length">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Wingspan, m</mat-label>
+      <input matInput type="number" formControlName="wingspan">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ordnance</mat-label>
+      <textarea matInput formControlName="ordnance"></textarea>
+    </mat-form-field>
+    <mat-checkbox formControlName="bombs"><img src="assets/icons/bomb.png" class="unit-icon">Bombs</mat-checkbox>
+    <mat-checkbox formControlName="depthCharges"><img src="assets/icons/depth_charge.png" class="unit-icon">Depth charges</mat-checkbox>
+    <mat-checkbox formControlName="rockets"><img src="assets/icons/rocket.png" class="unit-icon">Rockets</mat-checkbox>
+    <mat-checkbox formControlName="torpedoes"><img src="assets/icons/torpedo.png" class="unit-icon">Torpedoes</mat-checkbox>
+    <mat-checkbox formControlName="pakGun"><img src="assets/icons/pak_gun.png" class="unit-icon">PAK Gun</mat-checkbox>
+    <mat-checkbox formControlName="leighLight"><img src="assets/icons/leigh_light.png" class="unit-icon">Leigh light</mat-checkbox>
+    <mat-checkbox formControlName="sirene"><img src="assets/icons/siren.png" class="unit-icon">Sirene</mat-checkbox>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button type="button" mat-button (click)="cancel()">Cancel</button>
+  <button type="button" mat-button color="primary" (click)="submit()" [disabled]="!form.valid || !image">Add</button>
+</mat-dialog-actions>
