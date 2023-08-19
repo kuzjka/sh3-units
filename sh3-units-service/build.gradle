@@ -17,3 +17,7 @@ dependencies {
   implementation 'org.flywaydb:flyway-core'
   implementation 'com.h2database:h2:2.1.214'
 }
+
+tasks.named('bootJar') {
+  archiveVersion = ''
+}
