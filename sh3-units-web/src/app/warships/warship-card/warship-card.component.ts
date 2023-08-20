@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UnitEntry, Warship } from "../../shared/data.model";
+import { UnitEntry, Warship } from "../../core/data.model";
 
 @Component({
   selector: 'app-warship-card',

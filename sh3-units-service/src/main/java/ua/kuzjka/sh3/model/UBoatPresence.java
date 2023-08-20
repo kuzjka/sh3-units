@@ -12,6 +12,14 @@ public class UBoatPresence extends Presence<UBoat> {
     @JoinColumn(name = "unit_id")
     private UBoat uboat;
 
+    public UBoatPresence() {
+    }
+
+    public UBoatPresence(Nation nation,  UBoat uboat, int start, int end) {
+        super(nation, start, end);
+        this.uboat = uboat;
+    }
+
     @Override
     public UBoat getUnit() {
         return uboat;

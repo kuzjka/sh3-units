@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  links = ['merchants', 'warships', 'uboats', 'aircraft'];
+  links = ['merchants', 'warships', 'uboats', 'aircraft', 'nations'];
   activeLink = this.links[0];
 
   constructor() {

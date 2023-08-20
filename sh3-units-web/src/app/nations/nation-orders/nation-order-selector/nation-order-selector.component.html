@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-select [formControl]="control" placeholder="--- Select a unit to add ---">
+    <mat-option *ngFor="let unit of selectionList" [value]="unit">
+      <div class="option-entry">
+        <img class="unit-thumb" [src]="unit.thumbUrl" [alt]="unit.name">{{ unit.name }}
+      </div>
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageViewComponent } from './image-view.component';
+import { NationAddComponent } from './nation-add.component';
 
-describe('ImageViewComponent', () => {
-  let component: ImageViewComponent;
-  let fixture: ComponentFixture<ImageViewComponent>;
+describe('NationAddComponent', () => {
+  let component: NationAddComponent;
+  let fixture: ComponentFixture<NationAddComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ImageViewComponent]
+      declarations: [NationAddComponent]
     });
-    fixture = TestBed.createComponent(ImageViewComponent);
+    fixture = TestBed.createComponent(NationAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

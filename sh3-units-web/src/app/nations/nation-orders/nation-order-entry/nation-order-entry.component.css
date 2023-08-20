@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+:host > img {
+  width: 100px;
+  height: 60px;
+  padding: 8px 0;
+  object-fit: cover;
+}
+
+.unit-name {
+  width: 400px;
+  padding: 0 16px;
+}
+
+mat-slider {
+  width: 800px;
+}
+

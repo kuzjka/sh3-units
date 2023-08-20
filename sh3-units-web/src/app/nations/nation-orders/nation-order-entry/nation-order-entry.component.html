@@ -1,0 +1,6 @@
+<img [src]="entry.unit.thumbUrl" [alt]="entry.unit.name">
+<div class="unit-name">{{ entry.unit.name }}</div>
+<mat-slider discrete min="1939" max="1945" showTickMarks>
+  <input matSliderStartThumb [(ngModel)]="entry.start">
+  <input matSliderEndThumb [(ngModel)]="entry.end">
+</mat-slider>

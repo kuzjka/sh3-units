@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface NationRepository extends JpaRepository<Nation, Integer> {
     List<Nation> findAllByOrderByNameAsc();
+
+    List<Nation> findAllByNameIn(List<String> names);
 }

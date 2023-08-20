@@ -12,6 +12,14 @@ public class MerchantPresence extends Presence<Merchant> {
     @JoinColumn(name = "unit_id")
     private Merchant merchant;
 
+    public MerchantPresence() {
+    }
+
+    public MerchantPresence(Nation nation, Merchant merchant, int start, int end) {
+        super(nation, start, end);
+        this.merchant = merchant;
+    }
+
     @Override
     public Merchant getUnit() {
         return merchant;

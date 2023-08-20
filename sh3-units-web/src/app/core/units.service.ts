@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Aircraft, Merchant, UBoat, UnitEntry, Warship } from "./data.model";
+import { Aircraft, Merchant, NationEntry, UBoat, UnitEntry, Warship } from "./data.model";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UnitsService {
 
   constructor(private http: HttpClient) { }
@@ -19,7 +17,7 @@ export class UnitsService {
     if (year) params = params.set('year', year);
     if (nations) params = params.appendAll({nations: nations});
 
-    return this.http.get<UnitEntry<Merchant>[]>('/api/merchants');
+    return this.http.get<UnitEntry<Merchant>[]>('/api/merchants', { params });
   }
 
   getWarships(year?: number, nations?: string[]) {
@@ -27,7 +25,7 @@ export class UnitsService {
     if (year) params = params.set('year', year);
     if (nations) params = params.appendAll({ nations: nations });
 
-    return this.http.get<UnitEntry<Warship>[]>('/api/warships');
+    return this.http.get<UnitEntry<Warship>[]>('/api/warships', { params });
   }
 
   getUboats(year?: number, nations?: string[]) {
@@ -35,7 +33,7 @@ export class UnitsService {
     if (year) params = params.set('year', year);
     if (nations) params = params.appendAll({ nations: nations });
 
-    return this.http.get<UnitEntry<UBoat>[]>('/api/uboats');
+    return this.http.get<UnitEntry<UBoat>[]>('/api/uboats', { params });
   }
 
   getAircraft(year?: number, nations?: string[]) {
@@ -43,7 +41,11 @@ export class UnitsService {
     if (year) params = params.set('year', year);
     if (nations) params = params.appendAll({ nations: nations });
 
-    return this.http.get<UnitEntry<Aircraft>[]>('/api/aircraft');
+    return this.http.get<UnitEntry<Aircraft>[]>('/api/aircraft', { params });
+  }
+
+  getNations(): Observable<NationEntry[]> {
+    return this.http.get<NationEntry[]>('/api/nations');
   }
 
   addMerchant(merchant: Merchant, image: ArrayBuffer) {

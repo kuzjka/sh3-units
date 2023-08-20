@@ -12,6 +12,14 @@ public class AircraftPresence extends Presence<Aircraft> {
     @JoinColumn(name = "unit_id")
     private Aircraft aircraft;
 
+    public AircraftPresence() {
+    }
+
+    public AircraftPresence(Nation nation, Aircraft aircraft, int start, int end) {
+        super(nation, start, end);
+        this.aircraft = aircraft;
+    }
+
     @Override
     public Aircraft getUnit() {
         return aircraft;

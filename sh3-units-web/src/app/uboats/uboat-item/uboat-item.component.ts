@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { UBoat, UnitEntry } from "../../shared/data.model";
+import { UBoat, UnitEntry } from "../../core/data.model";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 @Component({

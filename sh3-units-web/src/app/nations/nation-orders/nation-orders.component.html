@@ -1,1 +1,31 @@
-<p>nation-orders works!</p>
+<h2 class="nation-title">
+  <ng-container *ngIf="nationEntry; else noNationSelected">
+    <img [src]="nationEntry.flagUrl" [alt]="nationEntry.nation">
+    {{ nationEntry.nation }}
+  </ng-container>
+  <ng-template #noNationSelected>
+    Please select nation
+  </ng-template>
+</h2>
+
+<ng-container *ngIf="nationEntry">
+  <h2>Merchants</h2>
+  <app-nation-order-entry *ngFor="let merchant of model.merchants" [entry]="merchant"></app-nation-order-entry>
+  <app-nation-order-selector [selectionList]="merchantList" (selected)="model.addMerchant($event)"></app-nation-order-selector>
+
+  <h2>Warships</h2>
+  <app-nation-order-entry *ngFor="let warship of model.warships" [entry]="warship"></app-nation-order-entry>
+  <app-nation-order-selector [selectionList]="warshipList" (selected)="model.addWarship($event)"></app-nation-order-selector>
+
+  <h2>UBoats</h2>
+  <app-nation-order-entry *ngFor="let uboat of model.uboats" [entry]="uboat"></app-nation-order-entry>
+  <app-nation-order-selector [selectionList]="uboatList" (selected)="model.addUboat($event)"></app-nation-order-selector>
+
+  <h2>Aircraft</h2>
+  <app-nation-order-entry *ngFor="let aircraft of model.aircraft" [entry]="aircraft"></app-nation-order-entry>
+  <app-nation-order-selector [selectionList]="aircraftList" (selected)="model.addAircraft($event)"></app-nation-order-selector>
+
+  <div>
+    <button type="button" mat-raised-button color="primary" (click)="submit()">Save</button>
+  </div>
+</ng-container>

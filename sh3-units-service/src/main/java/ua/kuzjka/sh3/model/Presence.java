@@ -21,6 +21,15 @@ public abstract class Presence<T> {
     @Column(name = "end_year")
     private int end;
 
+    public Presence() {
+    }
+
+    public Presence(Nation nation, int start, int end) {
+        this.nation = nation;
+        this.start = start;
+        this.end = end;
+    }
+
     public Integer getId() {
         return id;
     }

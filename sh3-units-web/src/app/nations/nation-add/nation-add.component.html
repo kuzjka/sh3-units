@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>Add nation</h3>
+
+<app-image-paste (imageLoaded)="imageLoaded($event)"></app-image-paste>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [formControl]="name">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button type="button" mat-button (click)="cancel()">Cancel</button>
+  <button type="button" mat-button color="primary" (click)="submit()">Add</button>
+</mat-dialog-actions>

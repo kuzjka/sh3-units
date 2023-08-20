@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Aircraft, UnitEntry } from "../../shared/data.model";
+import { Aircraft, UnitEntry } from "../../core/data.model";
 
 @Component({
   selector: 'app-aircraft-card',

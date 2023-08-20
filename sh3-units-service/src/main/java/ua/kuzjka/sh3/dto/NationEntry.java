@@ -1,15 +1,25 @@
 package ua.kuzjka.sh3.dto;
 
 public class NationEntry {
+    private int id;
     private String nation;
     private String flagUrl;
 
     public NationEntry() {
     }
 
-    public NationEntry(String nation, String flagUrl) {
+    public NationEntry(int id, String nation, String flagUrl) {
+        this.id = id;
         this.nation = nation;
         this.flagUrl = flagUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNation() {

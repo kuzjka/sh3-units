@@ -1,1 +1,12 @@
-<p>nations works!</p>
+<div class="nation-selection">
+  <button mat-raised-button color="primary" (click)="openAddNationDialog()">
+    Add nation
+  </button>
+  <mat-nav-list>
+    <a *ngFor="let n of nations" mat-list-item (click)="selectedNation = n">
+      <img [src]="n.flagUrl" [alt]="n.nation" class="nation-flag">{{ n.nation }}
+    </a>
+  </mat-nav-list>
+</div>
+
+<app-nation-orders [nationEntry]="selectedNation"></app-nation-orders>

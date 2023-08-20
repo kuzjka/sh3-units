@@ -2,6 +2,54 @@
   <button mat-raised-button color="primary" (click)="openAddDialog()">Add merchant</button>
 </div>
 
+<div class="filters">
+  <ng-container [formGroup]="backendFilters">
+    <mat-form-field>
+      <mat-label>Year</mat-label>
+      <mat-select formControlName="year" placeholder="any">
+        <mat-option>any</mat-option>
+        <mat-option *ngFor="let year of [1939, 1940, 1941, 1942, 1943, 1944, 1945]" [value]="year">{{ year }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nations</mat-label>
+      <mat-select formControlName="nations" placeholder="--- ALl nations ---" multiple>
+        <mat-option *ngFor="let nation of nations" [value]="nation.nation">
+          <div class="nation-option">
+            <img [src]="nation.flagUrl">{{ nation.nation }}
+          </div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container [formGroup]="frontendFilters">
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="categories" multiple>
+        <mat-option *ngFor="let cat of CATEGORIES" [value]="cat">{{ cat }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="sort">
+      <span>Sort order: </span>
+      <mat-button-toggle-group formControlName="sortOption">
+        <mat-button-toggle *ngFor="let option of SORT_OPTIONS" [value]="option">{{ option }}</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <mat-button-toggle-group formControlName="sortOrderAsc">
+        <mat-button-toggle [value]="true">
+          <mat-icon>arrow_downward</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle [value]="false">
+          <mat-icon>arrow_upward</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </ng-container>
+</div>
+
 <div class="unit-list">
-  <app-merchant-card *ngFor="let merchant of merchants" [merchant]="merchant" (click)="openItemDetails(merchant)"></app-merchant-card>
+  <app-merchant-card *ngFor="let merchant of filteredMerchants" [merchant]="merchant" (click)="openItemDetails(merchant)"></app-merchant-card>
 </div>

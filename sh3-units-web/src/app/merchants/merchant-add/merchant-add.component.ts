@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
-import { MerchantCategory } from "../../shared/data.model";
+import { MerchantCategory } from "../../core/data.model";
 import { MatDialogRef } from "@angular/material/dialog";
-import { UnitsService } from "../../shared/units.service";
+import { UnitsService } from "../../core/units.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({

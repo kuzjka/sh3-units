@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ua.kuzjka.sh3.model.Aircraft;
 import ua.kuzjka.sh3.model.AircraftPresence;
+import ua.kuzjka.sh3.model.Nation;
 
 import java.util.List;
 
@@ -18,10 +19,12 @@ public interface AircraftPresenceRepository extends JpaRepository<AircraftPresen
     List<Aircraft> findByYear(@Param("year") int year);
 
     @Override
-    @Query("select p.aircraft from AircraftPresence p where p.nation in :nations")
+    @Query("select p.aircraft from AircraftPresence p where p.nation.name in :nations")
     List<Aircraft> findByNations(@Param("nations") List<String> nations);
 
     @Override
-    @Query("select p.aircraft from AircraftPresence p where p.start <= :year and p.end >= :year and p.nation in :nations")
+    @Query("select p.aircraft from AircraftPresence p where p.start <= :year and p.end >= :year and p.nation.name in :nations")
     List<Aircraft> findByYearAndNations(@Param("year") int year, @Param("nations") List<String> nations);
+
+    void deleteAllByNation(Nation nation);
 }

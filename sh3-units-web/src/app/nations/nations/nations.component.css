@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+}
+
+.nation-selection {
+  width: 200px;
+  border-right: #424242 solid 1px;
+}
+
+app-nation-orders {
+  width: 100%;
+  padding-left: 24px;
+}
+
+.nation-flag {
+  padding-right: 8px;
+}

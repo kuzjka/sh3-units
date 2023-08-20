@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UBoat, UnitEntry } from "../../shared/data.model";
+import { UBoat, UnitEntry } from "../../core/data.model";
 
 @Component({
   selector: 'app-uboat-card',

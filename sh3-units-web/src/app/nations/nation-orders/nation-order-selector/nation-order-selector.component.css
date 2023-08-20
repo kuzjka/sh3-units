@@ -1,0 +1,20 @@
+mat-form-field {
+  width: 450px
+}
+
+mat-option {
+  vertical-align: middle;
+  height: 80px
+}
+
+mat-option img {
+  height: 80px;
+  width: 100px;
+  object-fit: contain;
+  padding-right: 8px;
+}
+
+.option-entry {
+  display: flex;
+  align-items: center;
+}

@@ -17,10 +17,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { ImagePasteComponent } from './shared/image-paste/image-paste.component';
 import { editableGuard } from "./editable.guard";
 import { HttpClientModule } from "@angular/common/http";
-import { ImageViewComponent } from './shared/image-view/image-view.component';
 import { MatIconModule } from "@angular/material/icon";
 import { MerchantItemComponent } from './merchants/merchant-item/merchant-item.component';
 import { WarshipAddComponent } from './warships/warship-add/warship-add.component';
@@ -34,6 +32,9 @@ import { UboatAddComponent } from './uboats/uboat-add/uboat-add.component';
 import { AircraftAddComponent } from './aircraft/aircraft-add/aircraft-add.component';
 import { AircraftCardComponent } from './aircraft/aircraft-card/aircraft-card.component';
 import { AircraftItemComponent } from './aircraft/aircraft-item/aircraft-item.component';
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
 
 const routes: Routes = [
   { path: 'merchants', component: MerchantListComponent },
@@ -56,8 +57,6 @@ const routes: Routes = [
     UboatListComponent,
     AircraftListComponent,
     MerchantAddComponent,
-    ImagePasteComponent,
-    ImageViewComponent,
     MerchantItemComponent,
     WarshipAddComponent,
     WarshipItemComponent,
@@ -77,6 +76,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
 
+    CoreModule.forRoot(),
+    SharedModule,
+
     /* Angular Material */
     MatButtonModule,
     MatCardModule,
@@ -87,6 +89,7 @@ const routes: Routes = [
     MatSnackBarModule,
     MatTabsModule,
     MatIconModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

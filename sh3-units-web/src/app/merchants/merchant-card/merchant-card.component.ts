@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Merchant, UnitEntry } from "../../shared/data.model";
+import { Merchant, UnitEntry } from "../../core/data.model";
 
 @Component({
   selector: 'app-merchant-card',

@@ -58,14 +58,9 @@ export interface UnitEntry<T> {
 }
 
 export interface NationEntry {
+  id: number,
   nation: string,
   flagUrl: string
-}
-
-export interface UnitSelectionEntry {
-  id: number,
-  name: string,
-  thumbUrl: string
 }
 
 export enum MerchantCategory {

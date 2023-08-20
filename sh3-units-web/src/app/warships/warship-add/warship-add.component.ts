@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { WarshipCategory } from "../../shared/data.model";
+import { WarshipCategory } from "../../core/data.model";
 import { FormBuilder, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
-import { UnitsService } from "../../shared/units.service";
+import { UnitsService } from "../../core/units.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({

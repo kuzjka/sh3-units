@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { Aircraft, UnitEntry } from "../../shared/data.model";
+import { Aircraft, UnitEntry } from "../../core/data.model";
 
 @Component({
   selector: 'app-aircraft-item',

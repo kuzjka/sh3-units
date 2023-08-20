@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { UnitsService } from "../../shared/units.service";
+import { UnitsService } from "../../core/units.service";
 import { MatDialog } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Observable } from "rxjs";
-import { Aircraft, UnitEntry } from "../../shared/data.model";
+import { Aircraft, NationEntry, UnitEntry } from "../../core/data.model";
 import { AircraftAddComponent } from "../aircraft-add/aircraft-add.component";
 import { AircraftItemComponent } from "../aircraft-item/aircraft-item.component";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-aircraft-list',
@@ -17,15 +18,26 @@ export class AircraftListComponent {
 
   aircraft: UnitEntry<Aircraft>[] = [];
 
+  backendFilters = this.fb.group({
+    year: this.fb.control<number | null>(null),
+    nations: this.fb.nonNullable.control([] as string[])
+  });
+
+  nations: NationEntry[] = [];
+
   constructor(private unitService: UnitsService,
               private dialog: MatDialog,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private fb: FormBuilder) {
     this.editable = unitService.isEditable();
     this.loadAircraft();
+    unitService.getNations().subscribe(data => this.nations = data);
+    this.backendFilters.valueChanges.subscribe(() => this.loadAircraft());
   }
 
   loadAircraft() {
-    this.unitService.getAircraft().subscribe({
+    const filters = this.backendFilters.getRawValue();
+    this.unitService.getAircraft(filters.year || undefined, filters.nations).subscribe({
       next: data => this.aircraft = data,
       error: () => this.snackBar.open('Cannot get aircraft')
     });

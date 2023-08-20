@@ -8,6 +8,12 @@
   gap: 16px;
 }
 
+.filters {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
 app-uboat-card {
   width: 200px
 }

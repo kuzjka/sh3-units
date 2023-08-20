@@ -2,6 +2,29 @@
   <button mat-raised-button color="primary" (click)="openAddDialog()">Add U-boat</button>
 </div>
 
+<div class="filters">
+  <ng-container [formGroup]="backendFilters">
+    <mat-form-field>
+      <mat-label>Year</mat-label>
+      <mat-select formControlName="year" placeholder="any">
+        <mat-option>any</mat-option>
+        <mat-option *ngFor="let year of [1939, 1940, 1941, 1942, 1943, 1944, 1945]" [value]="year">{{ year }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nations</mat-label>
+      <mat-select formControlName="nations" placeholder="--- ALl nations ---" multiple>
+        <mat-option *ngFor="let nation of nations" [value]="nation.nation">
+          <div class="nation-option">
+            <img [src]="nation.flagUrl">{{ nation.nation }}
+          </div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+</div>
+
 <div class="unit-list">
   <app-uboat-card *ngFor="let uboat of uboats" [uboat]="uboat" (click)="openItemDetails(uboat)"></app-uboat-card>
 </div>
