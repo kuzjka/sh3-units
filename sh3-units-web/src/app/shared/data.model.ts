@@ -74,6 +74,8 @@ export enum MerchantCategory {
   Tanker = 'TANKER',
   Small = 'SMALL',
   Sailing = 'SAILING',
+  Replenishment = 'REPLENISHMENT',
+  Troop = 'TROOP',
   Other = 'OTHER'
 }
 
